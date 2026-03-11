@@ -3,28 +3,36 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
     {
-        id: 1,
-        title: "E-Commerce Rebrand",
-        category: "Branding & UI/UX",
-        image: "bg-zinc-800", // Placeholder class
+        id: 2,
+        title: "Smart Product Price Prediction System",
+        category: "Machine Learning (LightGBM)",
+        description: "End-to-end regression pipeline with TF-IDF, One-Hot Encoding, and scaling. Evaluated via SMAPE to reduce generalization error.",
+        stack: "Python, Pandas, NumPy, Scikit-learn, LightGBM, spaCy",
+        image: "/smart_price_prediction.png",
     },
     {
-        id: 2,
-        title: "Fintech Dashboard",
-        category: "Product Design",
-        image: "bg-zinc-700",
+        id: 1,
+        title: "Vehicle Detection System",
+        category: "Computer Vision (OpenCV, SVM)",
+        description: "Real-time HOG + SVM pipeline with 99.1% accuracy. 40% inference speed improvement via bottleneck profiling.",
+        stack: "Python, OpenCV, HOG, SVM",
+        image: "/vehicle_detection.png",
     },
     {
         id: 3,
-        title: "Travel App",
-        category: "Mobile Design",
-        image: "bg-zinc-800",
+        title: "Resume Screener",
+        category: "NLP (NLTK, TF-IDF)",
+        description: "NLP pipeline using TF-IDF vectors for relevance-based resume scoring. Deterministic, explainable ranking design.",
+        stack: "Python, NLTK, TF-IDF, Cosine Similarity, Gradio",
+        image: "/resume_screener.png",
     },
     {
         id: 4,
-        title: "Architecture Portfolio",
-        category: "Web Design",
-        image: "bg-zinc-700",
+        title: "Interactive Pathfinding Visualizer",
+        category: "Python (Pygame, Dijkstra)",
+        description: "Implemented BFS & Dijkstra's algorithms using queues, heaps, and grid-based adjacency.",
+        stack: "C++, Python, Pygame, DSA",
+        image: "/pathfinding_visualizer.png",
     },
 ];
 
@@ -34,9 +42,9 @@ export default function Projects() {
             <div className="container mx-auto px-4 max-w-5xl">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-4">Selected Work</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-4">Selected Projects</h2>
                         <p className="text-secondary max-w-md">
-                            A collection of projects showcasing my expertise in digital design and development.
+                            A showcase of my projects across Machine Learning, Computer Vision, and Software Engineering.
                         </p>
                     </div>
                     <a
@@ -58,18 +66,30 @@ export default function Projects() {
                             className="group cursor-pointer perspective-1000"
                         >
                             <div
-                                className={`w-full aspect-[4/3] rounded-2xl mb-4 overflow-hidden relative ${project.image} transform transition-transform duration-700 ease-out group-hover:scale-[1.02] shadow-2xl`}
+                                className={`w-full aspect-[4/3] rounded-2xl mb-4 overflow-hidden relative transform transition-transform duration-700 ease-out group-hover:scale-[1.02] shadow-2xl p-6 sm:p-8 flex flex-col justify-center border border-white/5`}
                             >
-                                {/* Placeholder Gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                {/* Background Image */}
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 group-hover:scale-110"
+                                    style={{ backgroundImage: `url(${project.image})` }}
+                                ></div>
 
-                                {/* Image Reveal Effect - Simulation */}
-                                <motion.div
-                                    initial={{ scale: 1.2, opacity: 0 }}
-                                    whileInView={{ scale: 1, opacity: 1 }}
-                                    transition={{ duration: 1.2, ease: "easeOut" }}
-                                    className="absolute inset-0 bg-inherit"
-                                />
+                                {/* Dark Overlay Filter (always partially active, gets darker on hover) */}
+                                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/70 transition-colors duration-500 z-0" />
+
+                                {/* Text Content Overlay (appears on hover) */}
+                                <div className="relative z-10 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 h-full flex flex-col justify-end">
+                                    <p className="text-white font-medium text-sm md:text-base leading-relaxed mb-4 text-shadow-sm">
+                                        {project.description}
+                                    </p>
+                                    <div className="flex flex-wrap gap-2 mt-auto">
+                                        {project.stack.split(', ').map(tech => (
+                                            <span key={tech} className="text-xs px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-white font-medium">
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="flex justify-between items-center">

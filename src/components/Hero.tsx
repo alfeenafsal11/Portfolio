@@ -19,13 +19,13 @@ export default function Hero() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                         </span>
-                        Available for new projects
+                        Actively seeking Summer Internships
                     </motion.div>
 
                     {/* Main Heading */}
                     <div className="max-w-4xl flex justify-center">
                         <TextReveal className="text-6xl md:text-8xl font-bold tracking-tight text-white justify-center text-center">
-                            Design that speaks about your brand.
+                            Hi, I'm Alfeen K Afsal.
                         </TextReveal>
                     </div>
 
@@ -36,7 +36,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.5 }}
                         className="text-lg md:text-xl text-secondary max-w-2xl"
                     >
-                        A premium portfolio template designed for creatives who want to showcase their work with style and sophistication.
+                        Software Engineering Intern Candidate — CS Undergraduate
                     </motion.p>
 
                     {/* CTA Buttons */}

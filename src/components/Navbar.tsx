@@ -6,7 +6,7 @@ const navItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Work", href: "#work" },
-    { name: "Services", href: "#services" },
+    { name: "Expertise", href: "#services" },
 ];
 
 export default function Navbar() {
@@ -21,7 +21,7 @@ export default function Navbar() {
     }, []);
 
     const copyEmail = () => {
-        navigator.clipboard.writeText("hello@foliofy.com");
+        navigator.clipboard.writeText("alfeen.afsal@gmail.com");
         // Could add toast here
     };
 
@@ -38,7 +38,7 @@ export default function Navbar() {
                         }`}
                 >
                     <a href="#" className="text-xl font-bold tracking-tighter hover:text-white transition-colors">
-                        Foliofy.
+                        Alfeen.
                     </a>
 
                     <div className="hidden md:flex items-center gap-8">

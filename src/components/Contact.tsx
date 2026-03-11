@@ -14,7 +14,8 @@ export default function Contact() {
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-4">Let's work together</h2>
                     <p className="text-secondary text-lg">
-                        Have a project in mind? I'd love to hear about it.
+                        Have a project or internship opportunity in mind? I'd love to hear about it.
+                        <br />You can also reach me at +91-8590627725.
                     </p>
                 </motion.div>
 
@@ -33,7 +34,7 @@ export default function Contact() {
                                     type="text"
                                     id="name"
                                     className="w-full px-4 py-3 rounded-xl bg-background border border-white/10 focus:border-white/30 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all text-white placeholder:text-zinc-600"
-                                    placeholder="John Doe"
+                                    placeholder="Your Name"
                                 />
                             </div>
                             <div className="space-y-2">
@@ -42,7 +43,7 @@ export default function Contact() {
                                     type="email"
                                     id="email"
                                     className="w-full px-4 py-3 rounded-xl bg-background border border-white/10 focus:border-white/30 focus:outline-none focus:ring-1 focus:ring-white/30 transition-all text-white placeholder:text-zinc-600"
-                                    placeholder="john@example.com"
+                                    placeholder="yourname@example.com"
                                 />
                             </div>
                         </div>

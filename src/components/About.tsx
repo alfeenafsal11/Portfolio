@@ -1,26 +1,33 @@
 import { motion } from "framer-motion";
 
 const skills = [
-    "UX Research", "UI Design", "Prototyping",
-    "React", "TypeScript", "TailwindCSS",
-    "Framer Motion", "Node.js"
+    "Python", "C++", "C", "JavaScript",
+    "Data Structures", "Algorithms", "OOP",
+    "Machine Learning", "Generative AI", "LLMs",
+    "REST APIs", "SQL", "MongoDB", "ElasticSearch",
+    "Pandas", "NumPy", "Scikit-Learn", "OpenCV", "Git"
 ];
 
 const experience = [
     {
-        year: "2023 - Present",
-        role: "Senior Product Designer",
-        company: "TechFlow Inc."
+        year: "Aug 2023 - Present",
+        role: "B.Tech CSE (CGPA: 8.36)",
+        company: "Lovely Professional University"
     },
     {
-        year: "2021 - 2023",
-        role: "UI/UX Designer",
-        company: "Creative Studio"
+        year: "Jun 2025 - Jul 2025",
+        role: "DSA Trainee",
+        company: "Cipher Schools (400+ DSA problems solved)"
     },
     {
-        year: "2019 - 2021",
-        role: "Frontend Developer",
-        company: "StartUp Lab"
+        year: "Dec 2025",
+        role: "Certified Automation Professional",
+        company: "Automation Anywhere"
+    },
+    {
+        year: "Nov 2024",
+        role: "Supervised Machine Learning",
+        company: "Stanford Online / Coursera"
     }
 ];
 
@@ -39,14 +46,10 @@ export default function About() {
                         <h2 className="text-3xl md:text-5xl font-bold mb-6">About Me</h2>
                         <div className="text-secondary space-y-4 text-lg leading-relaxed">
                             <p>
-                                I'm a passionate digital designer and developer with a focus on creating
-                                intuitive and visually stunning user experiences. With a background in
-                                both design and engineering, I bridge the gap between aesthetics and functionality.
+                                I am a CS Undergraduate and Software Engineering Intern Candidate with a strong foundation in Data Structures, Algorithms, and Object-Oriented Programming. Experienced in primary programming languages like Python, C++, and C.
                             </p>
                             <p>
-                                My approach is rooted in user-centric design principles, ensuring that
-                                every pixel serves a purpose. I love tackling complex problems and turning
-                                them into simple, elegant solutions.
+                                I have a keen interest in Machine Learning, Backend Development, and applying Generative AI. I love tackling complex problems and building efficient software systems.
                             </p>
                         </div>
 
@@ -72,7 +75,7 @@ export default function About() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <h3 className="text-2xl font-bold mb-6">Experience</h3>
+                        <h3 className="text-2xl font-bold mb-6">Education & Training</h3>
                         <div className="space-y-6">
                             {experience.map((job, index) => (
                                 <div

@@ -1,26 +1,26 @@
 import { motion } from "framer-motion";
-import { Layout, Smartphone, Code, PenTool } from "lucide-react";
+import { Brain, Code, Server, Trophy } from "lucide-react";
 
 const services = [
     {
-        icon: <Layout size={24} />,
-        title: "Web Design",
-        description: "Visually stunning and user-friendly website designs that capture your brand's essence.",
-    },
-    {
-        icon: <Smartphone size={24} />,
-        title: "Mobile App Design",
-        description: "Intuitive mobile interfaces designed for optimal user experience across all devices.",
+        icon: <Brain size={24} />,
+        title: "Machine Learning",
+        description: "Creating models for Regression and Classification. Exploring Generative AI, LLMs, and Prompting.",
     },
     {
         icon: <Code size={24} />,
-        title: "Development",
-        description: "Clean, efficient code using modern frameworks to bring designs to life.",
+        title: "Software Engineering",
+        description: "Building robust applications with Modular Design, emphasizing clear architecture and debugging.",
     },
     {
-        icon: <PenTool size={24} />,
-        title: "Branding",
-        description: "Comprehensive branding packages including logo design, typography, and color systems.",
+        icon: <Server size={24} />,
+        title: "Backend Development",
+        description: "Designing REST APIs, utilizing Linux CLI, and working with SQL/NoSQL databases.",
+    },
+    {
+        icon: <Trophy size={24} />,
+        title: "Problem Solving & Competitions",
+        description: "Solved 400+ DSA problems on LeetCode with 50 & 100-Day badges. Ranked Top 50 in Binary Blitz Hackathon.",
     },
 ];
 
@@ -29,9 +29,9 @@ export default function Services() {
         <section id="services" className="py-20 bg-surface/30">
             <div className="container mx-auto px-4 max-w-5xl">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4">Services</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4">Areas of Expertise</h2>
                     <p className="text-secondary max-w-md mx-auto">
-                        I offer a range of services to help you build a strong online presence.
+                        Here are my core technical domains and achievements.
                     </p>
                 </div>
 

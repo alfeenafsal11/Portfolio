@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Copy } from "lucide-react";
+import { Copy, Download } from "lucide-react";
 
 
 const navItems = [
@@ -7,6 +7,7 @@ const navItems = [
     { name: "About", href: "#about" },
     { name: "Work", href: "#work" },
     { name: "Expertise", href: "#services" },
+    { name: "Certificates", href: "#certificates" },
 ];
 
 export default function Navbar() {
@@ -53,13 +54,24 @@ export default function Navbar() {
                         ))}
                     </div>
 
-                    <button
-                        onClick={copyEmail}
-                        className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-zinc-200 transition-colors"
-                    >
-                        <Copy size={16} />
-                        <span>Copy Email</span>
-                    </button>
+                    <div className="flex items-center gap-2">
+                        <button
+                            onClick={copyEmail}
+                            className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-zinc-200 transition-colors"
+                        >
+                            <Copy size={16} />
+                            <span>Copy Email</span>
+                        </button>
+                        <a
+                            href="https://drive.google.com/file/d/11nn7PCoRWna9LN0qBK22HHt7dtYhBp3g/view?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-white text-black rounded-full hover:bg-zinc-200 transition-colors"
+                        >
+                            <Download size={16} />
+                            <span>Resume</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>

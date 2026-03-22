@@ -8,6 +8,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
+import Certificates from "./components/Certificates";
 
 function App() {
   useEffect(() => {
@@ -43,6 +44,7 @@ function App() {
         <About />
         <Services />
         <Projects />
+        <Certificates />
         <Contact />
       </main>
       <Footer />

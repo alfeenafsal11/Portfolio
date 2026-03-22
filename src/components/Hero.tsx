@@ -36,7 +36,7 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.5 }}
                         className="text-lg md:text-xl text-secondary max-w-2xl"
                     >
-                        Software Engineering Intern Candidate — CS Undergraduate
+                        AI Systems & Backend Engineering Intern Candidate — Building Agentic LLM and Retrieval-Based Systems
                     </motion.p>
 
                     {/* CTA Buttons */}

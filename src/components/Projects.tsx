@@ -20,11 +20,11 @@ const projects = [
     },
     {
         id: 3,
-        title: "Resume Screener",
-        category: "NLP (NLTK, TF-IDF)",
-        description: "NLP pipeline using TF-IDF vectors for relevance-based resume scoring. Deterministic, explainable ranking design.",
-        stack: "Python, NLTK, TF-IDF, Cosine Similarity, Gradio",
-        image: "/resume_screener.png",
+        title: "C++ Debugger Retrieval Agent",
+        category: "LLM Systems / Retrieval-Augmented Debugging",
+        description: "Agentic debugging system that retrieves error explanations using a structured MCP knowledge base. Implements caching of bug-type retrievals to optimize latency and improve consistency across repeated error patterns.",
+        stack: "C++, Python, Retrieval Systems, MCP (Model Context Protocol), LLM Integration, Caching Strategies",
+        image: "/cpp_debugger_agent.png",
     },
     {
         id: 4,

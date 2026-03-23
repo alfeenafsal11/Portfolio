@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Award } from "lucide-react";
+import SectionNav from "./SectionNav";
 
 const certificates = [
     {
@@ -77,6 +78,8 @@ export default function Certificates() {
                         </motion.a>
                     ))}
                 </div>
+
+                <SectionNav href="#contact" label="Get In Touch" />
             </div>
         </section>
     );

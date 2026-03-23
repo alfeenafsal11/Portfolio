@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-
-const skills = [
-    "Python", "C++", "C", "JavaScript",
-    "Data Structures", "Algorithms", "OOP",
-    "Machine Learning", "Generative AI", "LLMs",
-    "REST APIs", "SQL", "MongoDB", "ElasticSearch",
-    "Pandas", "NumPy", "Scikit-Learn", "OpenCV", "Git"
-];
+import SectionNav from "./SectionNav";
 
 const experience = [
     {
@@ -55,20 +48,6 @@ export default function About() {
                                 My approach emphasizes system-level thinking over isolated models—prioritizing latency, scalability, and reliability in AI-integrated backend systems.
                             </p>
                         </div>
-
-                        <div className="mt-8">
-                            <h3 className="text-white font-semibold mb-4">Skills</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {skills.map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="px-3 py-1 bg-surface border border-white/10 rounded-full text-sm text-secondary"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
                     </motion.div>
 
                     {/* Experience Column */}
@@ -93,6 +72,8 @@ export default function About() {
                         </div>
                     </motion.div>
                 </div>
+
+                <SectionNav href="#skills" label="View My Skills" />
             </div>
         </section>
     );

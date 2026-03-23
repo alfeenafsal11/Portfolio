@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Brain, Code, Server, Trophy } from "lucide-react";
+import SectionNav from "./SectionNav";
 
 const services = [
     {
@@ -55,6 +56,8 @@ export default function Services() {
                         </motion.div>
                     ))}
                 </div>
+
+                <SectionNav href="#certificates" label="View Certificates" />
             </div>
         </section>
     );

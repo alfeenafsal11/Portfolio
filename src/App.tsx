@@ -5,10 +5,12 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
 import About from "./components/About";
+import Skills from "./components/Skills";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
 import Certificates from "./components/Certificates";
+import StarField from "./components/StarField";
 
 function App() {
   useEffect(() => {
@@ -21,7 +23,7 @@ function App() {
       mouseMultiplier: 1,
       smoothTouch: false,
       touchMultiplier: 2,
-    } as any); // Type assertion needed for v1.x sometimes, or update to v2 if available
+    } as any);
 
     function raf(time: number) {
       lenis.raf(time);
@@ -36,18 +38,24 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-primary selection:bg-white/20">
-      <ScrollProgress />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Projects />
-        <Certificates />
-        <Contact />
-      </main>
-      <Footer />
+    <div className="min-h-screen bg-background text-primary selection:bg-white/20 relative overflow-x-hidden">
+      <StarField />
+
+      {/* Foreground content */}
+      <div className="relative z-10">
+        <ScrollProgress />
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Services />
+          <Certificates />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }

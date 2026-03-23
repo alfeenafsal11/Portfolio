@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import TextReveal from "./TextReveal";
 import MagneticButton from "./MagneticButton";
+import SectionNav from "./SectionNav";
 
 export default function Hero() {
     return (
@@ -58,17 +59,19 @@ export default function Hero() {
                             </MagneticButton>
                         </a>
                     </motion.div>
+
+                    {/* Scroll Indicator */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1, delay: 1 }}
+                        className="pt-2"
+                    >
+                        <ArrowDown className="text-secondary/30 animate-bounce" size={20} />
+                    </motion.div>
                 </div>
 
-                {/* Scroll Indicator */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1 }}
-                    className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-                >
-                    <ArrowDown className="text-secondary animate-bounce" size={24} />
-                </motion.div>
+                <SectionNav href="#about" label="Learn About Me" />
             </div>
         </section>
     );

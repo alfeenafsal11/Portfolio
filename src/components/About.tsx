@@ -46,10 +46,13 @@ export default function About() {
                         <h2 className="text-3xl md:text-5xl font-bold mb-6">About Me</h2>
                         <div className="text-secondary space-y-4 text-lg leading-relaxed">
                             <p>
-                                I am a CS Undergraduate and Software Engineering Intern Candidate with a strong foundation in Data Structures, Algorithms, and Object-Oriented Programming. Experienced in primary programming languages like Python, C++, and C.
+                                I am an AI Systems and Backend Engineering intern candidate focused on building agentic LLM systems and retrieval-driven architectures. My work centers on designing end-to-end pipelines that integrate local LLMs, structured retrieval (RAG), and workflow automation to solve real engineering problems.
                             </p>
                             <p>
-                                I have a keen interest in Machine Learning, Backend Development, and applying Generative AI. I love tackling complex problems and building efficient software systems.
+                                I have hands-on experience with LLM orchestration (Ollama, Qwen), MCP-based retrieval systems, and n8n automation, along with a strong foundation in data structures, algorithms, and modular system design. I've built systems such as a C++ debugging agent that retrieves contextual error explanations and optimizes performance through caching strategies.
+                            </p>
+                            <p>
+                                My approach emphasizes system-level thinking over isolated models—prioritizing latency, scalability, and reliability in AI-integrated backend systems.
                             </p>
                         </div>
 

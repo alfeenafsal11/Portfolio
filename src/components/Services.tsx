@@ -57,7 +57,7 @@ export default function Services() {
                     ))}
                 </div>
 
-                <SectionNav href="#certificates" label="View Certificates" />
+                <SectionNav href="#achievements" label="View Achievements" />
             </div>
         </section>
     );

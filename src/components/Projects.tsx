@@ -16,6 +16,23 @@ interface Project {
 
 const projects: Project[] = [
     {
+        id: 3,
+        title: "C++ Debugger Retrieval Agent",
+        category: "LLM Systems · RAG · MCP",
+        description:
+            "Agentic debugging system that intercepts C++ compiler errors and retrieves structured explanations from a local MCP knowledge base. Implements intelligent caching of bug-type retrievals to minimize latency and ensure consistency across repeated error patterns.",
+        highlights: [
+            "MCP-based knowledge retrieval for contextual C++ error explanations",
+            "LLM integration (Ollama/Qwen) generates fix suggestions from retrieved context",
+            "Error fingerprinting enables deterministic cache lookup for identical bug types",
+            "Caching layer reduces repeated retrieval latency significantly",
+            "Modular pipeline: parse → fingerprint → cache/retrieve → generate → return",
+        ],
+        stack: ["C++", "Python", "Ollama", "Qwen", "MCP", "RAG", "LLM Orchestration", "Caching"],
+        image: "/cpp_debugger_agent.png",
+        github: "https://github.com/alfeenafsal11/C-Debugger",
+    },
+    {
         id: 2,
         title: "Smart Product Price Prediction System",
         category: "Machine Learning · LightGBM",
@@ -47,23 +64,6 @@ const projects: Project[] = [
         ],
         stack: ["Python", "OpenCV", "HOG", "SVM", "Scikit-learn", "NumPy", "NMS"],
         image: "/vehicle_detection.png",
-    },
-    {
-        id: 3,
-        title: "C++ Debugger Retrieval Agent",
-        category: "LLM Systems · RAG · MCP",
-        description:
-            "Agentic debugging system that intercepts C++ compiler errors and retrieves structured explanations from a local MCP knowledge base. Implements intelligent caching of bug-type retrievals to minimize latency and ensure consistency across repeated error patterns.",
-        highlights: [
-            "MCP-based knowledge retrieval for contextual C++ error explanations",
-            "LLM integration (Ollama/Qwen) generates fix suggestions from retrieved context",
-            "Error fingerprinting enables deterministic cache lookup for identical bug types",
-            "Caching layer reduces repeated retrieval latency significantly",
-            "Modular pipeline: parse → fingerprint → cache/retrieve → generate → return",
-        ],
-        stack: ["C++", "Python", "Ollama", "Qwen", "MCP", "RAG", "LLM Orchestration", "Caching"],
-        image: "/cpp_debugger_agent.png",
-        github: "https://github.com/alfeenafsal11/C-Debugger",
     },
     {
         id: 5,

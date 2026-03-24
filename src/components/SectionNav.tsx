@@ -7,6 +7,17 @@ interface SectionNavProps {
 }
 
 export default function SectionNav({ href, label }: SectionNavProps) {
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const elem = document.getElementById(targetId);
+            if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -17,6 +28,7 @@ export default function SectionNav({ href, label }: SectionNavProps) {
         >
             <a
                 href={href}
+                onClick={handleScroll}
                 className="group flex flex-col items-center gap-2 text-secondary hover:text-white transition-colors duration-300"
                 aria-label={label}
             >

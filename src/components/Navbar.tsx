@@ -8,11 +8,27 @@ const navItems = [
     { name: "Skills", href: "#skills" },
     { name: "Work", href: "#work" },
     { name: "Expertise", href: "#services" },
+    { name: "Achievements", href: "#achievements" },
     { name: "Certificates", href: "#certificates" },
 ];
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            if (targetId === '') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+            const elem = document.getElementById(targetId);
+            if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -39,8 +55,8 @@ export default function Navbar() {
                         : "bg-transparent"
                         }`}
                 >
-                    <a href="#" className="text-xl font-bold tracking-tighter hover:text-white transition-colors">
-                        Alfeen.
+                    <a href="#" onClick={(e) => handleScroll(e, '#')} className="text-xl font-bold tracking-tighter hover:text-white transition-colors">
+                        AK.
                     </a>
 
                     <div className="hidden md:flex items-center gap-8">
@@ -48,6 +64,7 @@ export default function Navbar() {
                             <a
                                 key={item.name}
                                 href={item.href}
+                                onClick={(e) => handleScroll(e, item.href)}
                                 className="text-sm font-medium text-secondary hover:text-white transition-colors"
                             >
                                 {item.name}

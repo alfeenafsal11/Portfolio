@@ -1,4 +1,4 @@
-import { Linkedin, Github } from "lucide-react";
+import { Linkedin, Github, Mail } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -9,6 +9,7 @@ export default function Footer() {
                 </p>
 
                 <div className="flex items-center gap-6">
+                    <SocialLink href="mailto:alfeen.afsal@gmail.com" icon={<Mail size={20} />} />
                     <SocialLink href="https://linkedin.com/in/alfeen-k-afsal" icon={<Linkedin size={20} />} />
                     <SocialLink href="https://github.com/alfeenafsal11" icon={<Github size={20} />} />
                 </div>

@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ScrollProgress from "./components/ScrollProgress";
 import Certificates from "./components/Certificates";
+import Achievements from "./components/Achievements";
 import StarField from "./components/StarField";
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
           <Skills />
           <Projects />
           <Services />
+          <Achievements />
           <Certificates />
           <Contact />
         </main>

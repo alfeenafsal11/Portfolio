@@ -15,17 +15,30 @@ export default function Contact() {
         setStatus("sending");
 
         try {
-            // Uses mailto as a reliable, zero-backend approach that opens the user's mail client
-            // pre-filled with the right from/to details and body
-            const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
-            const body = encodeURIComponent(
-                `Name: ${name}\nFrom: ${email}\n\n${message}`
-            );
-            window.location.href = `mailto:alfeen.afsal@gmail.com?subject=${subject}&body=${body}&from=${encodeURIComponent(email)}`;
-            setStatus("sent");
-            setName("");
-            setEmail("");
-            setMessage("");
+            const response = await fetch("https://formsubmit.co/ajax/alfeen.afsal@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    _subject: `Portfolio Contact from ${name}`,
+                    message: message
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                setStatus("sent");
+                setName("");
+                setEmail("");
+                setMessage("");
+            } else {
+                setStatus("error");
+            }
         } catch {
             setStatus("error");
         }
@@ -104,7 +117,7 @@ export default function Contact() {
                             className="w-full py-4 bg-white text-black font-semibold rounded-xl hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                         >
                             {status === "sending" ? (
-                                "Opening mail client..."
+                                "Sending message..."
                             ) : status === "sent" ? (
                                 "Message ready! ✓"
                             ) : status === "error" ? (

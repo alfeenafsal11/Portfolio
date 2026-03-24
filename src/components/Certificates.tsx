@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { ExternalLink, Award } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, Award, X } from "lucide-react";
+import { useState, useEffect } from "react";
 import SectionNav from "./SectionNav";
 
 const certificates = [
@@ -30,6 +31,27 @@ const certificates = [
 ];
 
 export default function Certificates() {
+    const [selectedCert, setSelectedCert] = useState<typeof certificates[0] | null>(null);
+
+    // Prevent body scroll when modal is open
+    useEffect(() => {
+        if (selectedCert) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [selectedCert]);
+
+    const getIframeUrl = (url: string) => {
+        if (url.includes('drive.google.com/file/d/')) {
+            return url.replace('/view?usp=drive_link', '/preview');
+        }
+        return url;
+    };
+
     return (
         <section id="certificates" className="py-20 md:py-32">
             <div className="container mx-auto px-4 max-w-5xl">
@@ -48,16 +70,14 @@ export default function Certificates() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {certificates.map((cert, index) => (
-                        <motion.a
+                        <motion.button
                             key={cert.title}
-                            href={cert.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            onClick={() => setSelectedCert(cert)}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1, ease: [0.21, 0.47, 0.32, 0.98] }}
                             viewport={{ once: true, margin: "-50px" }}
-                            className="group flex items-start gap-4 p-6 rounded-2xl bg-surface border border-white/5 hover:border-white/20 transition-all duration-300 hover:bg-surface/80"
+                            className="group flex items-start gap-4 p-6 rounded-2xl bg-surface border border-white/5 hover:border-white/20 transition-all duration-300 hover:bg-surface/80 text-left w-full"
                         >
                             <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors duration-300">
                                 <Award size={18} className="text-white" />
@@ -75,12 +95,67 @@ export default function Certificates() {
                                     <p className="text-secondary text-sm">{cert.date}</p>
                                 </div>
                             </div>
-                        </motion.a>
+                        </motion.button>
                     ))}
                 </div>
 
                 <SectionNav href="#contact" label="Get In Touch" />
             </div>
+
+            <AnimatePresence>
+                {selectedCert && (
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8 bg-black/80 backdrop-blur-sm"
+                        onClick={(e) => {
+                            if (e.target === e.currentTarget) setSelectedCert(null);
+                        }}
+                    >
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            className="relative w-full max-w-5xl h-[80vh] bg-surface border border-white/10 rounded-2xl overflow-hidden flex flex-col shadow-2xl"
+                        >
+                            <div className="flex items-center justify-between p-4 border-b border-white/10 bg-background/80 backdrop-blur-md z-10">
+                                <h3 className="font-semibold text-lg text-white">{selectedCert.title}</h3>
+                                <div className="flex gap-2">
+                                    <a
+                                        href={selectedCert.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2 hover:bg-white/10 rounded-lg transition-colors text-secondary hover:text-white flex items-center gap-2 text-sm font-medium"
+                                        title="Open in new tab if preview fails"
+                                    >
+                                        <ExternalLink size={18} />
+                                        <span className="hidden md:inline">Open Original</span>
+                                    </a>
+                                    <button
+                                        onClick={() => setSelectedCert(null)}
+                                        className="p-2 hover:bg-white/10 rounded-lg transition-colors text-white bg-white/5"
+                                        title="Close"
+                                    >
+                                        <X size={20} />
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="flex-1 bg-black/50 relative">
+                                <div className="absolute inset-0 flex items-center justify-center -z-10">
+                                    <div className="w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin"></div>
+                                </div>
+                                <iframe
+                                    src={getIframeUrl(selectedCert.link)}
+                                    className="w-full h-full border-0 absolute inset-0 z-0 bg-white"
+                                    title={selectedCert.title}
+                                    allow="autoplay"
+                                />
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     );
 }

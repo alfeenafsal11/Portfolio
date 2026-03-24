@@ -12,7 +12,7 @@ interface Star {
 }
 
 const STAR_COUNT = 110;
-const MAX_SPEED = 0.06; // very slow drift
+const MAX_SPEED = 0.2; // increased drift speed
 
 function createStar(width: number, height: number): Star {
     return {
